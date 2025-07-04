@@ -1,6 +1,6 @@
 ## -- GO BUILD ------- 
 
-  FROM golang:1.21 as builder
+  FROM golang:1.23-alpine AS builder
 
   WORKDIR /app
   
@@ -14,7 +14,7 @@
   RUN go test -count=1 ./... && go build -o /app/main .
   
   ## -- YARN BUILD ------- 
-  FROM node:18 as frontend-builder
+  FROM node:22-alpine AS frontend-builder
   
   WORKDIR /app
   
@@ -28,7 +28,7 @@
   RUN npm run build
   
   ## -- ASSEMBLE --------
-  FROM golang:1.21
+  FROM golang:1.23-alpine
   
   WORKDIR /app
   
