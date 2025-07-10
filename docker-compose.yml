@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   gomap:
     build: .
@@ -9,4 +7,3 @@ services:
       - .env
     volumes:
       - ./src:/app/src
-      - ./templates:/app/src/templates

@@ -1,0 +1,23 @@
+services:
+  gomap:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    volumes:
+      - ./src:/app/src
+      - ./tmp:/app/tmp
+      - ./.air.toml:/app/.air.toml
+      - ./src/templates/dist:/app/src/templates/dist
+    command: air
+
+  frontend-watcher:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend.dev
+    volumes:
+      - ./src:/app/src
+    command: yarn watch:css

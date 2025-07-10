@@ -1,6 +1,6 @@
 ## -- GO BUILD ------- 
 
-  FROM golang:1.23-alpine AS builder
+  FROM golang:1.24-alpine AS builder
 
   WORKDIR /app
   
@@ -33,6 +33,7 @@
   WORKDIR /app
   
   COPY --from=builder /app/main .
+  
   COPY --from=frontend-builder /app/src/templates ./src/templates
   
   EXPOSE 8080

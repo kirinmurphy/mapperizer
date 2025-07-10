@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/sh 
 
 output=$(go test -count=1 -v ./src/... 2>&1)
 exit_code=$?

@@ -2,119 +2,159 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
     <title>Mapperizer :: Website Map Generator</title>
     <script src="https://unpkg.com/htmx.org@1.9.10"></script>
-    <link href="/src/templates/dist/output.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="/src/templates/dist/output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
 
   <body class="text-lg bg-[#071e22] lg:text-xl text-white font-thin">
     <div class="max-w-[800px] mx-auto">
-      <div class="md:h-[100vh] md:flex md:flex-col md:gap-3 md:justify-center md:pb-28">
+      <div
+        class="md:h-[100vh] md:flex md:flex-col md:gap-3 md:justify-center md:pb-28"
+      >
         <header class="text-center py-8 leading-8">
           <h1 class="inline-block mb-2">
             <span class="inline-block text-xl scale-x-[250%]">MAPPERIZER</span>
-            <span< class="inline-block text-xs translate-x-[5.4rem] translate-y-[-5px] text-orange-400 font-semibold">BETA</span>
+            <span
+              class="inline-block text-xs translate-x-[5.4rem] translate-y-[-5px] text-orange-400 font-semibold"
+              >BETA</span
+            >
           </h1>
           <p class="text-md mb-4">Website Map Generator</p>
-          <p class="text-sm">Create an embeddable map for your site with a google spreadsheet.</p>
+          <p class="text-sm">
+            Create an embeddable map for your site with a google spreadsheet.
+          </p>
         </header>
-  
-        <iframe class="mb-4"
-          src="/?sheetId=2PACX-1vTWuDWsI4KEC9QDP-JvcmuXuVqUfpnch5Iyv3Qrq4Iv67R7Onzn4PuuSHpqGkD9kyX2FGN7CCZnZp5f" 
-          width="100%" 
-          height="300" 
-          frameborder="0">
-        </iframe>  
+
+        <iframe
+          class="mb-4"
+          src="/?sheetId=2PACX-1vTWuDWsI4KEC9QDP-JvcmuXuVqUfpnch5Iyv3Qrq4Iv67R7Onzn4PuuSHpqGkD9kyX2FGN7CCZnZp5f"
+          width="100%"
+          height="300"
+          frameborder="0"
+        >
+        </iframe>
       </div>
 
       <div class="flex flex-col gap-4 leading-8">
-        <section class="bg-[#1d5468] p-6 md:rounded-md ">
-          <h2 class="text-2xl font-medium mb-2">Create your google spreadhseet</h2>
-            Clone 
-            <a 
-              href="https://docs.google.com/spreadsheets/d/1KX8kjoQ7RxFDh0T8roQ83JwIyd8w8etRIJfdJljCook/edit?pli=1&gid=0#gid=0" 
-              target="_blank" 
-              rel="noopener 
-              noreferrer" 
-              class="underline">
-              this spreadsheet</a>
+        <section class="bg-[#1d5468] p-6 md:rounded-md">
+          <h2 class="text-2xl font-medium mb-2">
+            Create your google spreadhseet
+          </h2>
+          Clone
+          <a
+            href="https://docs.google.com/spreadsheets/d/1KX8kjoQ7RxFDh0T8roQ83JwIyd8w8etRIJfdJljCook/edit?pli=1&gid=0#gid=0"
+            target="_blank"
+            rel="noopener 
+            noreferrer"
+            class="underline"
+          >
+            this spreadsheet</a
+          >
 
-            <div class="font-normal">File &gt; Make A Copy</div>
-          </li>
+          <div class="font-normal">File &gt; Make A Copy</div>
         </section>
-  
-        <section class="bg-[#1d5468] p-6 md:rounded-md ">
+
+        <section class="bg-[#1d5468] p-6 md:rounded-md">
           <h2 class="text-2xl font-medium mb-2">Add your locations</h2>
-          <p class="mb-2">Try the  
+          <p class="mb-2">
+            Try the
             <a
               href="https://chatgpt.com/g/g-kJ2i1rFDl-location-grabber"
               target="_blank"
-              rel="noopener noreferrer" 
-              class="underline">Location Grabber GPT</a>  
+              rel="noopener noreferrer"
+              class="underline"
+              >Location Grabber GPT</a
+            >
             to get your location data.
           </p>
 
-          <p class="text-xs">(guaranteed 83 1/2% accurate)</p>  
+          <p class="text-xs">(guaranteed 83 1/2% accurate)</p>
         </section>
 
         <section class="bg-[#1d5468] p-6 md:rounded-md">
           <h2 class="text-2xl font-medium mb-2">Publish your spreadsheet</h2>
           <ol class="list-decimal list-inside">
-            <li><span class="font-normal">File &gt; Share &gt; Publish To Web</span></li>
+            <li>
+              <span class="font-normal"
+                >File &gt; Share &gt; Publish To Web</span
+              >
+            </li>
             <li>Select <span class="font-normal">Publish</span></li>
             <li>Grab the URL from the popup</li>
           </ol>
         </section>
-  
+
         <section class="bg-[#1d5468] p-6 md:rounded-md">
           <h2 class="text-2xl font-medium mb-2">Update your spreadsheet</h2>
           <form id="sheetForm">
-            <label for="sheetUrl" class="block mb-3">Paste your spreasdheet URL</label>
-            <input 
-              type="text" 
-              id="sheetUrl" 
-              name="sheetUrl" 
-              placeholder="https://docs.google.com/spreadsheets/d/e/YOUR_ID/pubhtml" 
-              class="w-full p-2 mb-4 text-black" 
-              required 
+            <label for="sheetUrl" class="block mb-3"
+              >Paste your spreasdheet URL</label
+            >
+            <input
+              type="text"
+              id="sheetUrl"
+              name="sheetUrl"
+              placeholder="https://docs.google.com/spreadsheets/d/e/YOUR_ID/pubhtml"
+              class="w-full p-2 mb-4 text-black"
+              required
             />
-            <div id="urlError" class="text-red-200 mt-[-.5rem] mb-4 hidden"></div>
-            <div id="loadingIndicator" class="hidden">Loading...</div> 
+            <div
+              id="urlError"
+              class="text-red-200 mt-[-.5rem] mb-4 hidden"
+            ></div>
+            <div id="loadingIndicator" class="hidden">Loading...</div>
           </form>
 
           {{ if .Demo }}
-            <div id="demoPrompt" class="mt-2 px-6 py-4 bg-[#071e22]">
-              <h3 class="font-bold text-md">You are using the demo version.</h3>
-              <div class="mb-2 text-sm">Here's a sample Google Sheet URL to see how it works.</div>
-              <div class="mb-3">
-                <button 
-                  id="pasteDemoUrl" 
-                  class="bg-[#1d5468] px-4 py-2 text-sm font-bold rounded-md hover:bg-[#2d6478]"
-                  text-to-copy="https://docs.google.com/spreadsheets/d/e/2PACX-1vShEip38mVjSMbXceuDbwJA-hbN3gpfLEEgvHUKjSgsQFoW9HO_r3VMFac8fh8GbfkcK7e2g2oeOhwd/pubhtml">
-                  Use demo spreadsheet
-                </button>
-              </div>
-              <div class="text-xs"><a class="underline" href="/">View / Share</a> the non-demo version</div>
+          <div id="demoPrompt" class="mt-2 px-6 py-4 bg-[#071e22]">
+            <h3 class="font-bold text-md">You are using the demo version.</h3>
+            <div class="mb-2 text-sm">
+              Here's a sample Google Sheet URL to see how it works.
             </div>
+            <div class="mb-3">
+              <button
+                id="pasteDemoUrl"
+                class="bg-[#1d5468] px-4 py-2 text-sm font-bold rounded-md hover:bg-[#2d6478]"
+                text-to-copy="https://docs.google.com/spreadsheets/d/e/2PACX-1vShEip38mVjSMbXceuDbwJA-hbN3gpfLEEgvHUKjSgsQFoW9HO_r3VMFac8fh8GbfkcK7e2g2oeOhwd/pubhtml"
+              >
+                Use demo spreadsheet
+              </button>
+            </div>
+            <div class="text-xs">
+              <a class="underline" href="/">View / Share</a> the non-demo
+              version
+            </div>
+          </div>
           {{ end }}
         </section>
 
-        <div id="mapContainer"></div>  
+        <div id="mapContainer"></div>
       </div>
 
-      <footer class="flex flex-row justify-end gap-3 items-center text-sm text-gray-400 py-4 px-2 mb-2 lg:py-8">
-        <div style="font-size: 14px; font-weight: 300;" >
-          <copy-email-component 
-            email="codethingsdotnet@gmail.com">
+      <footer
+        class="flex flex-row justify-end gap-3 items-center text-sm text-gray-400 py-4 px-2 mb-2 lg:py-8"
+      >
+        <div style="font-size: 14px; font-weight: 300">
+          <copy-email-component email="codethingsdotnet@gmail.com">
           </copy-email-component>
         </div>
-      </footer>  
+      </footer>
     </div>
 
     <script src="/src/templates/js/bindCopyListener.js"></script>
-    <script type="module" src="https://cdn.codethings.net/webcomponents/copy-email-component/index.js"></script>
+    <script
+      type="module"
+      src="https://cdn.codethings.net/webcomponents/copy-email-component/index.js"
+    ></script>
     <script src="/src/templates/js/homeInit.js"></script>
   </body>
 </html>
